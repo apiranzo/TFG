@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,8 +13,11 @@ public class AuroraCollider : MonoBehaviour
     bool flag;
 
     bool flag3;
+    bool flag4 = true; 
 
     int time;
+
+    public AudioSource auroraSound; 
 
     //Kinect
 
@@ -31,6 +34,8 @@ public class AuroraCollider : MonoBehaviour
         auroraAnim = aurora.GetComponent<Animator>();
 
         flag3 = false;
+
+        auroraSound = aurora.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -65,7 +70,12 @@ public class AuroraCollider : MonoBehaviour
                     {
                         aurora.GetComponent<MovimentAurores>().enabled = true;
                         auroraAnim.SetFloat("revert", 1f);
-
+                        if (flag4)
+                        {
+                            auroraSound.Play();
+                            flag4 = false; 
+                        }
+                        
                     }
                     else
                     {
@@ -79,6 +89,7 @@ public class AuroraCollider : MonoBehaviour
                             {
                                 auroraAnim.SetFloat("revert", -1f);
                                 flag = false;
+                                flag4 = true; 
                             }
 
 
@@ -121,13 +132,5 @@ public class AuroraCollider : MonoBehaviour
         // Debug.Log(time);
 
     }
-
-    private void OnMouseEnter()
-    {
-        
-    }
-
-    
-
     
 }
