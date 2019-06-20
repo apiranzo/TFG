@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -145,6 +145,44 @@ public class animacioConstelacions : MonoBehaviour
                             }
                         }
 
+                        if (gestureListener.IsSwipeUp())
+                        {
+                            Debug.Log("Click");
+                            linia.enabled = true;
+                            // linia.speed = 0.5f;
+                            flag3 = false;
+                            if (flag)
+                            {
+                                linia.SetFloat("revert", 0.5f);
+                            }
+
+                            if (soUn)
+                            {
+                                soConst.clip = soSegon;
+                                soConst.Play();
+                                soUn = false;
+                            }
+                        }
+
+                        if (gestureListener.IsPsi())
+                        {
+                            Debug.Log("Click");
+                            linia.enabled = true;
+                            // linia.speed = 0.5f;
+                            flag3 = false;
+                            if (flag)
+                            {
+                                linia.SetFloat("revert", 0.5f);
+                            }
+
+                            if (soUn)
+                            {
+                                soConst.clip = soSegon;
+                                soConst.Play();
+                                soUn = false;
+                            }
+                        }
+
 
                     }
                     else
@@ -203,10 +241,5 @@ public class animacioConstelacions : MonoBehaviour
 
         rotacio = false; 
     }
-
-    
-
-   
-
 
 }
