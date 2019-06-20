@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,7 +15,7 @@ public class Final : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() 
     {
         if (AlphaI <= 1f)
         {
@@ -25,9 +25,9 @@ public class Final : MonoBehaviour
 
         if (AlphaI >= 1f)
         {
-            for(int i = 0; i <= 600; i++)
+            for(int i = 0; i <= 2000; i++)
             {
-                if (i == 600)
+                if (i == 2000)
                 {
                     SceneManager.LoadScene("Inici");
                 }
