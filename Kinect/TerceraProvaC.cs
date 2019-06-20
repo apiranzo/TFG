@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -154,7 +154,7 @@ public class TerceraProvaC : MonoBehaviour
                                     if (!rellotgeActiu)
                                     {
                                         Debug.Log("hola wave");
-                                        tocs = 0;
+                                        
                                         if (plantesB)
                                         {
                                             fuenteAudio.clip = plantes;
@@ -198,7 +198,14 @@ public class TerceraProvaC : MonoBehaviour
 
                                                 }
                                             }
-                                            
+
+                                            if (one)
+                                            {
+                                                tocs++; //això només ha de passar una vegada
+                                                volB = true;
+                                                //plantesB = true; //POSAR AIXÒ QUAN FINALITZA EL GEST
+                                                one = false;
+                                            }
 
                                             if (volB)
                                             {
@@ -207,17 +214,239 @@ public class TerceraProvaC : MonoBehaviour
                                                 volB = false;
                                                 one = true;
                                             }
-                                            if (one)
-                                            {
-                                                tocs++; //això només ha de passar una vegada
-                                                volB = true;
-                                                plantesB = true; //POSAR AIXÒ QUAN FINALITZA EL GEST
-                                                one = false;
-                                            }
+                                            
 
                                         }
                                     }
 
+                                }
+
+                                if (gestureListener.IsSwipeUp())
+                                {
+                                    if (temps >= 5f)
+                                    {
+                                        Debug.Log("hola swipeUp");
+                                        if (rellotgeActiu)
+                                        {
+
+
+                                            speedRotationBase = speedRotation;
+
+                                            for (int i = 0; i <= 10; i++)
+                                            {
+                                                speedRotation = 600;
+                                                MovimentCuca();
+
+                                                if (i == 10)
+                                                {
+                                                    speedRotation = speedRotationBase;
+                                                    MovimentCuca();
+
+                                                }
+                                            }
+
+                                            if (one)
+                                            {
+                                                tocs++; //això només ha de passar una vegada
+                                                volB = true;
+                                                //plantesB = true; //POSAR AIXÒ QUAN FINALITZA EL GEST
+                                                one = false;
+                                            }
+
+                                            if (volB)
+                                            {
+                                                fuenteAudio.clip = vol;
+                                                fuenteAudio.Play();
+                                                volB = false;
+                                                one = true;
+                                            }
+                                            
+
+                                        }
+                                    }
+
+                                    
+                                }
+                                if (gestureListener.IsSwipeLeft())
+                                {
+                                    if (temps >= 5f)
+                                    {
+                                        Debug.Log("hola swipeUp");
+                                        if (rellotgeActiu)
+                                        {
+
+
+                                            speedRotationBase = speedRotation;
+
+                                            for (int i = 0; i <= 10; i++)
+                                            {
+                                                speedRotation = 600;
+                                                MovimentCuca();
+
+                                                if (i == 10)
+                                                {
+                                                    speedRotation = speedRotationBase;
+                                                    MovimentCuca();
+
+                                                }
+                                            }
+
+                                            if (one)
+                                            {
+                                                tocs++; //això només ha de passar una vegada
+                                                volB = true;
+                                                //plantesB = true; //POSAR AIXÒ QUAN FINALITZA EL GEST
+                                                one = false;
+                                            }
+
+                                            if (volB)
+                                            {
+                                                fuenteAudio.clip = vol;
+                                                fuenteAudio.Play();
+                                                volB = false;
+                                                one = true;
+                                            }
+                                           
+
+                                        }
+                                    }
+
+
+                                }
+                                if (gestureListener.IsSwipeRight())
+                                {
+                                    if (temps >= 5f)
+                                    {
+                                        Debug.Log("hola swipeUp");
+                                        if (rellotgeActiu)
+                                        {
+
+
+                                            speedRotationBase = speedRotation;
+
+                                            for (int i = 0; i <= 10; i++)
+                                            {
+                                                speedRotation = 600;
+                                                MovimentCuca();
+
+                                                if (i == 10)
+                                                {
+                                                    speedRotation = speedRotationBase;
+                                                    MovimentCuca();
+
+                                                }
+                                            }
+
+                                            if (one)
+                                            {
+                                                tocs++; //això només ha de passar una vegada
+                                                volB = true;
+                                                //plantesB = true; //POSAR AIXÒ QUAN FINALITZA EL GEST
+                                                one = false;
+                                            }
+
+                                            if (volB)
+                                            {
+                                                fuenteAudio.clip = vol;
+                                                fuenteAudio.Play();
+                                                volB = false;
+                                                one = true;
+                                            }
+                                            
+
+                                        }
+                                    }
+                                }
+                                if (gestureListener.IsWave2())
+                                {
+                                    if (temps >= 5f)
+                                    {
+                                        Debug.Log("hola swipeUp");
+                                        if (rellotgeActiu)
+                                        {
+
+
+                                            speedRotationBase = speedRotation;
+
+                                            for (int i = 0; i <= 10; i++)
+                                            {
+                                                speedRotation = 600;
+                                                MovimentCuca();
+
+                                                if (i == 10)
+                                                {
+                                                    speedRotation = speedRotationBase;
+                                                    MovimentCuca();
+
+                                                }
+                                            }
+
+                                            if (one)
+                                            {
+                                                tocs++; //això només ha de passar una vegada
+                                                volB = true;
+                                                //plantesB = true; //POSAR AIXÒ QUAN FINALITZA EL GEST
+                                                one = false;
+                                            }
+
+                                            if (volB)
+                                            {
+                                                fuenteAudio.clip = vol;
+                                                fuenteAudio.Play();
+                                                volB = false;
+                                                one = true;
+                                            }
+
+
+                                        }
+                                    }
+
+
+                                }
+
+                                if (gestureListener.IsTpose())
+                                {
+                                    if (temps >= 5f)
+                                    {
+                                        Debug.Log("hola swipeUp");
+                                        if (rellotgeActiu)
+                                        {
+
+
+                                            speedRotationBase = speedRotation;
+
+                                            for (int i = 0; i <= 10; i++)
+                                            {
+                                                speedRotation = 600;
+                                                MovimentCuca();
+
+                                                if (i == 10)
+                                                {
+                                                    speedRotation = speedRotationBase;
+                                                    MovimentCuca();
+
+                                                }
+                                            }
+
+                                            if (one)
+                                            {
+                                                tocs++; //això només ha de passar una vegada
+                                                volB = true;
+                                                //plantesB = true; //POSAR AIXÒ QUAN FINALITZA EL GEST
+                                                one = false;
+                                            }
+
+                                            if (volB)
+                                            {
+                                                fuenteAudio.clip = vol;
+                                                fuenteAudio.Play();
+                                                volB = false;
+                                                one = true;
+                                            }
+
+
+                                        }
+                                    }
                                 }
                             }
 
@@ -284,6 +513,7 @@ public class TerceraProvaC : MonoBehaviour
                     //Debug.Log(posicioAncla);
 
                     rellotgeActiu = false;
+                    plantesB = true; 
 
                     centre = posicioAncla;
                     if (negatiu)
