@@ -11,7 +11,10 @@ public class SimpleGestureListener : MonoBehaviour, KinectGestures.GestureListen
     private bool swipeRight;
     private bool click;
     private bool raiseRightHand;
-    private bool raiseLeftHand; 
+    private bool raiseLeftHand;
+    private bool tpose;
+    private bool psi;
+    private bool wave2; 
 
 
     public bool IsSwipeUp()
@@ -91,6 +94,39 @@ public class SimpleGestureListener : MonoBehaviour, KinectGestures.GestureListen
         return false;
     }
 
+    public bool IsTpose()
+    {
+        if (tpose)
+        {
+            tpose = false;
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool IsPsi()
+    {
+        if (psi)
+        {
+            psi = false;
+            return true; 
+        }
+
+        return false; 
+    }
+
+    public bool IsWave2()
+    {
+        if (wave2)
+        {
+            wave2 = false;
+            return true;
+        }
+
+        return false;
+    }
+
 
     // the KinectManager instance
     private KinectManager manager;
@@ -110,7 +146,9 @@ public class SimpleGestureListener : MonoBehaviour, KinectGestures.GestureListen
         manager.DetectGesture(userId, KinectGestures.Gestures.Click);
         manager.DetectGesture(userId, KinectGestures.Gestures.RaiseRightHand);
         manager.DetectGesture(userId, KinectGestures.Gestures.RaiseLeftHand);
-
+        manager.DetectGesture(userId, KinectGestures.Gestures.Tpose);
+        manager.DetectGesture(userId, KinectGestures.Gestures.Psi);
+        manager.DetectGesture(userId, KinectGestures.Gestures.Wave2);
     }
 	
 	public void UserLost(uint userId, int userIndex)
@@ -149,6 +187,14 @@ public class SimpleGestureListener : MonoBehaviour, KinectGestures.GestureListen
 
         if (gesture == KinectGestures.Gestures.RaiseLeftHand)
             raiseLeftHand = true;
+
+        if (gesture == KinectGestures.Gestures.Tpose)
+            tpose = true;
+
+        if (gesture == KinectGestures.Gestures.Psi)
+            psi = true;
+        if (gesture == KinectGestures.Gestures.Wave2)
+            wave2 = true;
 
         return true;
 	}
